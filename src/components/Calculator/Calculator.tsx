@@ -24,6 +24,8 @@ export default class Calculator extends VueComponent {
 
   private equalShow = false;
 
+  private prevEqualClicked = false;
+
   calculate(rightOperand: number, pendingOperator: Operator) {
     let newResult = Number(this.result);
 
@@ -49,7 +51,8 @@ export default class Calculator extends VueComponent {
       this.calculate(operand, this.pendingOperator);
     } else {
       this.result = operand;
-      if (typeof this.history === 'undefined' || !this.history.length) this.history = operand.toString();
+      if (typeof this.history === 'undefined' || !this.history.length)
+        this.history = operand.toString();
     }
 
     this.pendingOperator = operator;
@@ -63,13 +66,13 @@ export default class Calculator extends VueComponent {
       return;
     }
 
-    if (typeof this.history === 'undefined') {
-      this.history = this.display;
-    }
-
     if (this.waitingForOperand) {
       newDisplay = '';
       this.waitingForOperand = false;
+    }
+
+    if (this.prevEqualClicked && typeof this.pendingOperator === "undefined") {
+      this.history = '';
     }
 
     if (this.display !== '0') {
@@ -80,6 +83,7 @@ export default class Calculator extends VueComponent {
 
     this.display = newDisplay;
     this.equalShow = false;
+    this.prevEqualClicked = false;
   }
 
   handleResetClick() {
@@ -89,6 +93,7 @@ export default class Calculator extends VueComponent {
     this.display = '0';
     this.waitingForOperand = true;
     this.equalShow = false;
+    this.prevEqualClicked = false;
   }
 
   async handleEqualClick() {
@@ -101,6 +106,7 @@ export default class Calculator extends VueComponent {
       this.calculate(operand, this.pendingOperator);
       this.pendingOperator = undefined;
       this.history = this.display;
+      this.prevEqualClicked = true;
     } else {
       this.display = operand.toString();
     }
