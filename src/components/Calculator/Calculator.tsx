@@ -9,19 +9,20 @@ import styles from './Calculator.css?module';
 
 @Component
 export default class Calculator extends VueComponent {
-  pendingOperator?: Operator;
 
-  waitingForOperand = true;
+  private pendingOperator?: Operator;
 
-  result = 0;
+  private waitingForOperand = true;
 
-  display = '0';
+  private result = 0;
 
-  history?: string = '';
+  private display = '0';
 
-  disabled = false;
+  private history?: string = '';
 
-  equalShow = false;
+  private disabled = false;
+
+  private equalShow = false;
 
   calculate(rightOperand: number, pendingOperator: Operator) {
     let newResult = Number(this.result);
@@ -106,7 +107,6 @@ export default class Calculator extends VueComponent {
 
     this.result = operand;
     this.waitingForOperand = true;
-
     this.disabled = false;
   }
 
