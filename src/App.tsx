@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Calculator from './components/Calculator';
 
-import './App.css'
+import './App.css';
 
 @Component
 export default class App extends Vue {
@@ -10,6 +10,6 @@ export default class App extends Vue {
       <div id="app">
         <Calculator />
       </div>
-    )
+    );
   }
 }

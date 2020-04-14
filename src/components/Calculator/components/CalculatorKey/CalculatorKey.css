@@ -4,6 +4,11 @@
     border-bottom: 1px solid #9a9a9a;
     line-height: 70px;
     font-size: 22px;
+    transition: 0.2s opacity ease;
+}
+
+.calculatorKey:hover {
+    opacity: 0.6;
 }
 
 .operationKey {

@@ -1,3 +1,3 @@
-import CalculatorKey from "./CalculatorKey";
+import CalculatorKey from './CalculatorKey';
 
-export default CalculatorKey
+export default CalculatorKey;
