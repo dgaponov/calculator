@@ -1,0 +1,31 @@
+.display {
+    color: #fff;
+    text-align: right;
+    font-weight: 200;
+    margin: 20px 20px 15px;
+    overflow: hidden;
+}
+
+.displayOperations {
+    font-size: 1.5em;
+    line-height: 2rem;
+    height: 2rem;
+    width: calc(100000vw + 100%);
+    transform: translateX(-100000vw);
+}
+
+.displayResult {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    min-height: 1.4em;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.equalOperator {
+    margin-right: 15px;
+}

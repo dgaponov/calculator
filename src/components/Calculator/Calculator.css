@@ -1,0 +1,11 @@
+.calculator {
+  width: 320px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #6e686f;
+  padding-bottom: 7px;
+  padding-left: 2px;
+  padding-right: 2px;
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
+}

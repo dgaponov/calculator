@@ -1,0 +1,12 @@
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    transition: 0.3s opacity ease;
+}
+
+.keypadDisabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

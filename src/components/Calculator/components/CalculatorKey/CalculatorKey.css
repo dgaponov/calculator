@@ -1,0 +1,22 @@
+.calculatorKey {
+    background-color: #d8d8d8;
+    border-right: 1px solid #9a9a9a;
+    border-bottom: 1px solid #9a9a9a;
+    line-height: 70px;
+    font-size: 22px;
+}
+
+.operationKey {
+    background-color: #a66161;
+    color: #fff;
+    border-right: none;
+}
+
+.zeroKey {
+    grid-column: 1/4;
+    border-bottom: none;
+}
+
+.zeroKey + .calculatorKey {
+    border-bottom: none;
+}
